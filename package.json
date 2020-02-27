@@ -1,0 +1,31 @@
+{
+  "name": "gatsby-plugin-css-system",
+  "description": "Gatsby plugin to enable server-side rendering for css-system",
+  "version": "0.1.0",
+  "bugs": {
+    "url": "https://github.com/css-system/gatsby-plugin-css-system/issues"
+  },
+  "homepage": "https://github.com/css-system/gatsby-plugin-css-system#readme",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "css-system",
+    "ssr"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "peerDependencies": {
+    "gatsby": "^2.0.0",
+    "@css-system/use-css": "^0.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/css-system/gatsby-plugin-css-system.git"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "gatsby-ssr.js"
+  ]
+}
