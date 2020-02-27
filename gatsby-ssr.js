@@ -1,4 +1,4 @@
-const React = require("React");
+const React = require("react");
 const { ServerStyleSheet, StyleSheetContext } = require("@css-system/use-css");
 
 const stylesheets = new Map();
