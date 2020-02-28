@@ -8,9 +8,9 @@ You can download `gatsby-plugin-css-system` from the NPM registry via the
 `npm` or `yarn` commands
 
 ```shell
-yarn add gatsby-plugin-css-system
+yarn add @css-system/gatsby-plugin-css-system
 # OR
-npm install gatsby-plugin-css-system --save
+npm install @css-system/gatsby-plugin-css-system --save
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ Add the plugin in your `gatsby-config.js` file:
 
 ```js
 module.exports = {
-  plugins: ["gatsby-plugin-css-system"]
+  plugins: ["@css-system/gatsby-plugin-css-system"]
 };
 ```
 
