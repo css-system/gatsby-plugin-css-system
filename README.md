@@ -2,6 +2,9 @@
 
 [![npm package][npm-badge]][npm]
 
+[npm-badge]: https://img.shields.io/npm/v/@css-system/gatsby-plugin-css-system .svg?style=flat-square
+[npm]: https://www.npmjs.org/package/@css-system/gatsby-plugin-css-system 
+
 ## Getting started
 
 You can download `gatsby-plugin-css-system` from the NPM registry via the
@@ -43,6 +46,4 @@ module.exports = {
 
 > For advanced configuration, please checkout [documentation](./docs/advanced.md)
 
-[npm-badge]: https://img.shields.io/npm/v/gatsby-plugin-css-system.svg?style=flat-square
-[npm]: https://www.npmjs.org/package/gatsby-plugin-css-system
 
