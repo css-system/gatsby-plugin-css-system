@@ -39,9 +39,10 @@ module.exports = {
     }
   ]
 };
+```
 
 > For advanced configuration, please checkout [documentation](./docs/advanced.md)
 
 [npm-badge]: https://img.shields.io/npm/v/gatsby-plugin-css-system.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/gatsby-plugin-css-system
-```
+
