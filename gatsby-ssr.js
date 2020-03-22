@@ -1,21 +1,21 @@
 const React = require("react");
 const {
-  ServerStyleSheet,
-  StyleSheetContext,
+  ServerStyleSheetManager,
+  StyleSheetManagerContext,
   ThemeContext
-} = require("@css-system/use-css");
+} = require("css-system");
 
 const stylesheets = new Map();
 
 const StyleSheetProvider = ({ children, pathname }) => {
-  const stylesheet = new ServerStyleSheet();
+  const stylesheetManager = new ServerStyleSheetManager();
 
-  stylesheets.set(pathname, stylesheet);
+  stylesheets.set(pathname, stylesheetManager);
 
   return (
-    <StyleSheetContext.Provider value={stylesheet}>
+    <StyleSheetManagerContext.Provider value={stylesheetManager}>
       {children}
-    </StyleSheetContext.Provider>
+    </StyleSheetManagerContext.Provider>
   );
 };
 
@@ -34,14 +34,10 @@ exports.wrapRootElement = ({ element, pathname }, pluginOptions = {}) => {
 };
 
 exports.onRenderBody = ({ setHeadComponents, pathname }) => {
-  const stylesheet = stylesheets.get(pathname);
+  const stylesheetManager = stylesheets.get(pathname);
 
-  if (stylesheet) {
-    setHeadComponents([
-      React.createElement("style", {
-        dangerouslySetInnerHTML: { __html: stylesheet.rules.join(" ") }
-      })
-    ]);
+  if (stylesheetManager) {
+    setHeadComponents(stylesheetManager.getStyleComponents());
     stylesheets.delete(pathname);
   }
 };
