@@ -1,5 +1,5 @@
 const React = require("react");
-const { ThemeContext } = require("@css-system/use-css");
+const { ThemeContext } = require("css-system");
 
 exports.wrapRootElement = ({ element }, pluginOptions = {}) => {
   if (!pluginOptions.theme) {
