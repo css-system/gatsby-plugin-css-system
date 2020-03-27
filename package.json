@@ -1,7 +1,7 @@
 {
   "name": "@css-system/gatsby-plugin-css-system",
   "description": "Gatsby plugin to enable server-side rendering for css-system",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "bugs": {
     "url": "https://github.com/css-system/gatsby-plugin-css-system/issues"
   },
@@ -30,8 +30,6 @@
     "node": ">=8.0.0"
   },
   "files": [
-    "SwitchThemeContext.js",
-    "gatsby-ssr.js",
-    "gatsby-browser.js"
+    "*.js"
   ]
 }
