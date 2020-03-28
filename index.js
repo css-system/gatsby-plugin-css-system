@@ -10,17 +10,16 @@ const useSwitchTheme = () => React.useContext(SwitchThemeContext);
 exports.useSwitchTheme = useSwitchTheme;
 
 const SwitchThemeProvider = ({ themes, defaultTheme, children }) => {
-  const [themeKey, setThemeKey] = React.useState(() => {
+  const [themeKey, setThemeKey] = React.useState(defaultTheme);
+
+  React.useEffect(() => {
     const storedTheme = window.localStorage.getItem(
       "gatsby-plugin-css-system-theme"
     );
-
-    return themes[storedTheme] ? storedTheme : defaultTheme;
-  });
-
-  React.useEffect(() => {
-    window.localStorage.setItem("gatsby-plugin-css-system-theme", themeKey);
-  }, [themeKey]);
+    if (themes[storedTheme]) {
+      setThemeKey(storedTheme);
+    }
+  }, []);
 
   const switchTheme = React.useCallback(
     newThemeKey => {
