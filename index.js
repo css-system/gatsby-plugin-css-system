@@ -1,43 +1,48 @@
-const React = require("react");
-const { ThemeContext } = require("css-system");
+const React = require("react")
+const {ThemeContext} = require("css-system")
 
-const SwitchThemeContext = React.createContext(["", () => {}]);
+const SwitchThemeContext = React.createContext(["", () => {}])
 
-exports.SwitchThemeContext = SwitchThemeContext;
+exports.SwitchThemeContext = SwitchThemeContext
 
-const useSwitchTheme = () => React.useContext(SwitchThemeContext);
+const useSwitchTheme = () => React.useContext(SwitchThemeContext)
 
-exports.useSwitchTheme = useSwitchTheme;
+exports.useSwitchTheme = useSwitchTheme
 
-const SwitchThemeProvider = ({ themes, defaultTheme, children }) => {
-  const [themeKey, setThemeKey] = React.useState(defaultTheme);
+const SwitchThemeProvider = ({themes, defaultTheme, children}) => {
+  const [themeKey, setThemeKey] = React.useState(undefined)
 
   React.useEffect(() => {
-    const storedTheme = window.localStorage.getItem(
-      "gatsby-plugin-css-system-theme"
-    );
-    if (themes[storedTheme]) {
-      setThemeKey(storedTheme);
+    const initialTheme = window.document.documentElement.style.getPropertyValue(
+      "--gatsby-plugin-css-system-theme"
+    )
+
+    if (themes[initialTheme]) {
+      setThemeKey(initialTheme)
     }
-  }, []);
+  }, [])
 
   const switchTheme = React.useCallback(
-    newThemeKey => {
+    (newThemeKey) => {
       if (themes[newThemeKey]) {
-        setThemeKey(newThemeKey);
+        setThemeKey(newThemeKey)
+        window.document.documentElement.style.setProperty(
+          "--gatsby-plugin-css-system-theme",
+          themeKey
+        )
         window.localStorage.setItem(
           "gatsby-plugin-css-system-theme",
           newThemeKey
-        );
+        )
       }
     },
     [themes]
-  );
+  )
 
   const contextValue = React.useMemo(() => [themeKey, switchTheme], [
     themeKey,
-    switchTheme
-  ]);
+    switchTheme,
+  ])
 
   return (
     <SwitchThemeContext.Provider value={contextValue}>
@@ -45,7 +50,7 @@ const SwitchThemeProvider = ({ themes, defaultTheme, children }) => {
         {children}
       </ThemeContext.Provider>
     </SwitchThemeContext.Provider>
-  );
-};
+  )
+}
 
-exports.SwitchThemeProvider = SwitchThemeProvider;
+exports.SwitchThemeProvider = SwitchThemeProvider

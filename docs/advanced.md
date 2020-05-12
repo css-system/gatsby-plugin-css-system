@@ -4,8 +4,8 @@
 
 ```js
 module.exports = {
-  plugins: ["@css-system/gatsby-plugin-css-system"]
-};
+  plugins: ["@css-system/gatsby-plugin-css-system"],
+}
 ```
 
 ## Create a `theme.js` file describing your theme:
@@ -30,23 +30,23 @@ export const theme: {
 ## Wrap pages with `ThemeProvider` in `gatsby-browser.js`
 
 ```js
-const React = require("react");
-import { ThemeContext } from "@css-system/use-css";
-const { theme } = require("./theme");
+const React = require("react")
+const {ThemeContext} = require("css-system")
+const {theme} = require("./theme")
 
-exports.wrapPageElement = ({ element }) => {
-  return <ThemeContext.Provider value={theme}>{element}</ThemeContext.Provider>;
-};
+exports.wrapPageElement = ({element}) => {
+  return <ThemeContext.Provider value={theme}>{element}</ThemeContext.Provider>
+}
 ```
 
 ## Wrap pages with `ThemeProvider` in `gatsby-ssr.js`
 
 ```js
-const React = require("react");
-import { ThemeContext } from "@css-system/use-css";
-const { theme } = require("./theme");
+const React = require("react")
+const {ThemeContext} = require("css-system")
+const {theme} = require("./theme")
 
-exports.wrapPageElement = ({ element }) => {
-  return <ThemeContext.Provider value={theme}>{element}</ThemeContext.Provider>;
-};
+exports.wrapPageElement = ({element}) => {
+  return <ThemeContext.Provider value={theme}>{element}</ThemeContext.Provider>
+}
 ```

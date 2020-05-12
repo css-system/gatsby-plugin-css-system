@@ -27,18 +27,18 @@ module.exports = {
           breakpoints: {
             s: "40em",
             m: "52em",
-            l: "64em"
+            l: "64em",
           },
           space: [0, 4, 8, 16, 32],
           fontSizes: [12, 14, 16, 20, 24],
           colors: {
             // your colors
-          }
-        }
-      }
-    }
-  ]
-};
+          },
+        },
+      },
+    },
+  ],
+}
 ```
 
 It also provide support for multiple themes
