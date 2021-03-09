@@ -15,7 +15,7 @@
   "license": "MIT",
   "main": "index.js",
   "devDependencies": {
-    "react": "^16.8.0"
+    "react": "^17.0.0"
   },
   "peerDependencies": {
     "css-system": "^0.9.1",
