@@ -18,9 +18,9 @@
     "react": "^16.8.0"
   },
   "peerDependencies": {
-    "@css-system/use-css": "^0.5.1",
-    "gatsby": "^2.0.0",
-    "react": "^16.8.0"
+    "css-system": "^0.9.1",
+    "gatsby": "^2.0.0 || ^3.0.0",
+    "react": "^16.8.0 || ^17.0.0"
   },
   "repository": {
     "type": "git",
