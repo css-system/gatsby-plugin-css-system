@@ -1,7 +1,7 @@
 {
   "name": "@css-system/gatsby-plugin-css-system",
   "description": "Gatsby plugin to enable server-side rendering for css-system",
-  "version": "0.5.8",
+  "version": "0.6.0",
   "bugs": {
     "url": "https://github.com/css-system/gatsby-plugin-css-system/issues"
   },
